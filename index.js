@@ -348,21 +348,29 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
-
-    /* Code here */
-
-  }
+function getHTML(data){
+  // How can we do this without knowing what the data argument looks like?? Maybe I'm being dumb and it's obvious, but nothing in the prompt suggests anything about the structure of the argument.
+}
 
 
 /* 💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪
 Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
-
-    /* Code here */
-
+function randomize(array){
+  let randomized_array = []
+  //create length_of_array variable to use in the loop since array.length will change
+  const length_of_array = array.length
+  for (let i = 0; i < length_of_array; i++) {
+    //create index to be pushed into randomized_array and push it
+    let lucky_number = Math.floor(Math.random()*array.length);
+    randomized_array.push(array[lucky_number])
+    //remove the selected lucky_number
+    array.splice(lucky_number, 1)
   }
+  return randomized_array
+}
+
+console.log("Stretch 2: ", randomize(artists))
 
 
  /* 💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪
